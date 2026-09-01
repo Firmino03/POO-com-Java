@@ -1,28 +1,32 @@
 # ☕ POO com Java
 
-Este repositório foi criado para consolidar meus estudos e organizar projetos desenvolvidos em **Java**. O objetivo é documentar a evolução do meu aprendizado, desde a lógica básica até conceitos avançados da linguagem.
+Este repositório foi criado para organizar meus códigos e documentar meu aprendizado na linguagem **Java**. Aqui concentro os fundamentos essenciais de lógica e os conceitos de arquitetura de software que estou dominando.
 
 ---
 
-## # Fundamentos da Linguagem
-* **Sintaxe básica:** Estrutura de classes e métodos principais.
-* **Variáveis:** Uso de tipos primitivos e wrappers.
-* **Condicionais:** Controle de fluxo com `if`, `else` e `switch`.
-* **Repetição:** Loops utilizando `while`, `do-while` e `for`.
+## # Operadores Matemáticos e Lógicos
+* **Aritméticos:** Uso de `+`, `-`, `*`, `/` e `%` para cálculos fundamentais.
+* **Relacionais:** Comparação de valores usando `>`, `<`, `==` e `!=`.
+* **Lógicos:** Construção de regras de negócio com os operadores `&&` (E), `||` (OU) e `!` (Negação).
 
-## # Orientação a Objetos (POO)
-* **Classes e Objetos:** Instanciação e estrutura de dados.
-* **Encapsulamento:** Uso de modificadores de acesso e métodos getters/setters.
-* **Herança:** Reaproveitamento de código entre classes.
-* **Polimorfismo:** Sobrescrita e sobrecarga de métodos.
-* **Abstração:** Criação de classes abstratas e interfaces.
+## # Pilares da Orientação a Objetos (POO)
+* **Abstração:** Isolamento de características essenciais de um objeto do mundo real.
+* **Encapsulamento:** Proteção e controle de acesso aos dados usando `private`, `getters` e `setters`.
+* **Herança:** Criação de novas classes a partir de classes existentes para reutilizar código.
+* **Polimorfismo:** Capacidade de um objeto assumir diferentes formas e comportamentos.
 
-## # Manipulação de Dados e Erros
-* **Arrays:** Criação e manipulação de vetores e matrizes.
-* **Collections:** Uso prático de `List`, `Set` e `Map`.
-* **Exceções:** Tratamento de erros com blocos `try-catch-finally`.
+---
 
-## # Recursos Modernos
-* **Lambdas:** Expressões para código mais conciso.
-* **Stream API:** Processamento funcional de coleções de dados.
+## # Como Executar o Projeto
 
+### Pré-requisitos
+* Ter o **JDK** instalado (versão 17 ou superior recomendada).
+* Uma IDE (IntelliJ IDEA, Eclipse ou VS Code).
+
+### Passo a Passo
+1. Clone este repositório em sua máquina:
+   ```bash
+   git clone https://github.com/Firmino03/POO-com-Java.git
+   ```
+2. Abra a pasta do projeto na sua IDE.
+3. Escolha a classe do assunto que deseja testar e execute o código.
