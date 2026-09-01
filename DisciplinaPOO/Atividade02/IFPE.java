@@ -26,7 +26,8 @@
         System.out.format("Nota: %.2f\n", nota);
         System.out.format("Sexo: %c\n", sexo);
         System.out.format("Curso: %s\n", curso);
-        System.out.format("Matrícula: %05d \n", matricula);
+        System.out.format("Matrícula: %08d \n", matricula); 
+        //o numero 8 significa que o número será preenchido com zeros à esquerda, caso seja menor que 8 dígitos.
     }
 
     public static void main(String[] args) {//O programa começa a executar aqui.
