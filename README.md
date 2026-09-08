@@ -34,5 +34,5 @@ Este repositório foi criado para organizar meus códigos e documentar meu apren
 ## Tabela ASCII
 
 A Tabela ASCII (American Standard Code for Information Interchange) é um padrão de codificação de caracteres que representa letras, números, símbolos e caracteres de controle por meio de valores numéricos, variando de 0 a 127. Criada nos anos 1960, ela permite que computadores e sistemas diferentes interpretem e troquem texto de forma padronizada, sendo a base para diversos outros sistemas de codificação utilizados atualmente, como o UTF-8.
-<img width="2560" height="1656" alt="image" src="https://github.com/user-attachments/assets/aa6a4b39-af0b-4af7-9e34-5a374a3043d8" />
+<img width="3507" height="2480" alt="tabela_ascii_A4_horizontal" src="https://github.com/user-attachments/assets/1e8ec22a-c22c-4b5d-ad08-a95f64f7ceaa" />
 
