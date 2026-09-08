@@ -9,7 +9,7 @@
 
     // a classe é o molde
     // e o construtor é o método que inicializa os atributos da classe
- public IFPE(int idade, long cpf, double nota, char sexo, String nome, String curso, long matricula) {
+public IFPE(int idade, long cpf, double nota, char sexo, String nome, String curso, long matricula) {
         this.idade = idade;
         this.cpf = cpf;
         this.nota = nota;
@@ -31,7 +31,7 @@
     }
 
     public static void main(String[] args) {//O programa começa a executar aqui.
-        IFPE karolAluno = new IFPE(25, 12345678901L, 8.5, 'F', "Karolayne Firmino", "IPI", 0003541);   
+        IFPE karolAluno = new IFPE(25, 12345678901L, 8.5, 'F', "Karolayne Firmino", "IPI", 12345);   
         // Crie uma nova matrícula chamada karolMatricula
         karolAluno.imprimir();
         //exibe os dados da matrícula de Karolayne Firmino
