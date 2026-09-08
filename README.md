@@ -30,3 +30,9 @@ Este repositório foi criado para organizar meus códigos e documentar meu apren
    ```
 2. Abra a pasta do projeto na sua IDE.
 3. Escolha a classe do assunto que deseja testar e execute o código.
+
+## Tabela ASCII
+
+A Tabela ASCII (American Standard Code for Information Interchange) é um padrão de codificação de caracteres que representa letras, números, símbolos e caracteres de controle por meio de valores numéricos, variando de 0 a 127. Criada nos anos 1960, ela permite que computadores e sistemas diferentes interpretem e troquem texto de forma padronizada, sendo a base para diversos outros sistemas de codificação utilizados atualmente, como o UTF-8.
+<img width="2560" height="1656" alt="image" src="https://github.com/user-attachments/assets/aa6a4b39-af0b-4af7-9e34-5a374a3043d8" />
+
