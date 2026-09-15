@@ -1,63 +1,112 @@
-
 public class Artesao {
+
     String nome;
     String cidade;
     String tecnica;
-    double precoPecaMedia;
+    double preco;
 
+    public Artesao(String nome, String cidade, String tecnica, double preco) {
+        this.nome = nome;
+        this.cidade = cidade;
+        this.tecnica = tecnica;
+        this.preco = preco;
+    }
+
+    public static class Paulista extends Artesao {
+        public Paulista(String nome, String cidade, String tecnica, double preco) {
+            super(nome, cidade, tecnica, preco); //super serve para acessar a classe pai (superclasse)
+        }
+    }
+
+    public static class Nordestino extends Artesao {
+        public Nordestino(String nome, String cidade, String tecnica, double preco) {
+            super(nome, cidade, tecnica, preco);
+        }
+    }
+
+    public static class Sulista extends Artesao {
+        public Sulista(String nome, String cidade, String tecnica, double preco) {
+            super(nome, cidade, tecnica, preco);
+        }
+    }
+
+    public static class Nortista extends Artesao {
+        public Nortista(String nome, String cidade, String tecnica, double preco) {
+            super(nome, cidade, tecnica, preco);
+        }
+    }
+
+    public static class CentroOestista extends Artesao {
+        public CentroOestista(String nome, String cidade, String tecnica, double preco) {
+            super(nome, cidade, tecnica, preco);
+        }
+    }
 
     public static void main(String[] args) {
 
-        Artesao artesao1 = new Artesao();
-        artesao1.nome = "Maria";
-        artesao1.cidade = "Caruaru";
-        artesao1.tecnica = "Cerâmica";
-        artesao1.precoPecaMedia = 80.00;
+        Paulista artPaulista = new Paulista(
+            "João",
+            "São Paulo",
+            "Cerâmica",
+            150.00
+        );
 
-        Artesao artesao2 = new Artesao();
-        artesao2.nome = "João";
-        artesao2.cidade = "Tracunhaém";
-        artesao2.tecnica = "Escultura em barro";
-        artesao2.precoPecaMedia = 120.00;
+        Nordestino artNordestino = new Nordestino(
+            "Maria",
+            "Recife",
+            "Renda",
+            100.00
+        );
 
-        Artesao artesao3 = new Artesao();
-        artesao3.nome = "Ana";
-        artesao3.cidade = "Olinda";
-        artesao3.tecnica = "Renda";
-        artesao3.precoPecaMedia = 60.00;
+        Sulista artSulista = new Sulista(
+            "Carlos",
+            "Curitiba",
+            "Madeira",
+            200.00
+        );
 
-        Artesao artesao4 = new Artesao();
-        artesao4.nome = "José";
-        artesao4.cidade = "Juazeiro do Norte";
-        artesao4.tecnica = "Madeira";
-        artesao4.precoPecaMedia = 100.00;
+        Nortista artNortista = new Nortista(
+            "Ana",
+            "Manaus",
+            "Palha",
+            80.00
+        );
 
-        System.out.println("Artesão: " + artesao1.nome);
-        System.out.println("Cidade: " + artesao1.cidade);
-        System.out.println("Técnica: " + artesao1.tecnica);
-        System.out.println("Preço médio: R$ " + artesao1.precoPecaMedia);
+        CentroOestista artCentroOestista = new CentroOestista(
+            "Pedro",
+            "Goiânia",
+            "Cerâmica",
+            120.00
+        );
 
-        System.out.println("-------------");
+        System.out.println("\nPaulista:");
+        System.out.println("Nome: " + artPaulista.nome);
+        System.out.println("Cidade: " + artPaulista.cidade);
+        System.out.println("Técnica: " + artPaulista.tecnica);
+        System.out.println("Preço: R$ " + artPaulista.preco);
 
-        System.out.println("Artesão: " + artesao2.nome);
-        System.out.println("Cidade: " + artesao2.cidade);
-        System.out.println("Técnica: " + artesao2.tecnica);
-        System.out.println("Preço médio: R$ " + artesao2.precoPecaMedia);
+        System.out.println("\nNordestino:");
+        System.out.println("Nome: " + artNordestino.nome);
+        System.out.println("Cidade: " + artNordestino.cidade);
+        System.out.println("Técnica: " + artNordestino.tecnica);
+        System.out.println("Preço: R$ " + artNordestino.preco);
 
-        System.out.println("-------------");
+        System.out.println("\nSulista:");
+        System.out.println("Nome: " + artSulista.nome);
+        System.out.println("Cidade: " + artSulista.cidade);
+        System.out.println("Técnica: " + artSulista.tecnica);
+        System.out.println("Preço: R$ " + artSulista.preco);
 
-        System.out.println("Artesão: " + artesao3.nome);
-        System.out.println("Cidade: " + artesao3.cidade);
-        System.out.println("Técnica: " + artesao3.tecnica);
-        System.out.println("Preço médio: R$ " + artesao3.precoPecaMedia);
+        System.out.println("\nNortista:");
+        System.out.println("Nome: " + artNortista.nome);
+        System.out.println("Cidade: " + artNortista.cidade);
+        System.out.println("Técnica: " + artNortista.tecnica);
+        System.out.println("Preço: R$ " + artNortista.preco);
 
-        System.out.println("-------------");
-
-        System.out.println("Artesão: " + artesao4.nome);
-        System.out.println("Cidade: " + artesao4.cidade);
-        System.out.println("Técnica: " + artesao4.tecnica);
-        System.out.println("Preço médio: R$ " + artesao4.precoPecaMedia);
+        System.out.println("\nCentro-Oestista:");
+        System.out.println("Nome: " + artCentroOestista.nome);
+        System.out.println("Cidade: " + artCentroOestista.cidade);
+        System.out.println("Técnica: " + artCentroOestista.tecnica);
+        System.out.println("Preço: R$ " + artCentroOestista.preco);
     }
-
-    
 }
