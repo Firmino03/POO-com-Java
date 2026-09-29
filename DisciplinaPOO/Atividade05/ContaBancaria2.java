@@ -6,12 +6,18 @@ public class ContaBancaria2 {
     double saldo;
     static int totalContas = 0;
 
-    ContaBancaria2(String titular, double saldo) {
+    ContaBancaria2(String titular) {
         this.titular = titular;
-        this.saldo = saldo;
+        this.saldo = 0;
         totalContas++;   //pegando o valor atual e somando +1
     }
 
+    ContaBancaria2(String titular, double saldo) {
+        this.titular = titular;
+        this.saldo = saldo;
+        totalContas++;
+    }
+    
     public void depositar(double valor) {
         //valor é um parâmetro do método depositar. 
         // ou seja, ele vai receber o valor do depósito e se esse valor for maior que 0, vai pra saldo.
