@@ -39,9 +39,16 @@ public class Artesao {
 
     public static void main(String[] args) {
 
-        Artesao mestreVitalino = new Artesao ("Vitalino Pereira dos Santos", "Pernambuco", "Barro",
+        Artesao mestreVitalino1 = new Artesao ("Vitalino Pereira dos Santos", "Pernambuco", "Barro",
             2900.00
         );
+        Artesao mestreVitalino2 = new Artesao ("Vitalino Pereira dos Santos", "Pernambuco", "Barro",
+            2900.00
+        );
+
+        IO.println("---TESTANDO OBJETOS NA MEMORIA---");
+        IO.println(mestreVitalino1 == mestreVitalino2);
+        IO.println(mestreVitalino1.equals(mestreVitalino2));
 
         Artesao mestreEspedito = new Artesao ("Espedito Seleiro", "Ceará", "Couro",
             945.00
@@ -55,7 +62,7 @@ public class Artesao {
             750.00
         );
 
-        mestreVitalino.exibirInfo();
+        mestreVitalino1.exibirInfo();
         IO.println("\n--------------------\n");
 
         mestreEspedito.exibirInfo();
@@ -67,7 +74,7 @@ public class Artesao {
         mestreZuza.exibirInfo();
         
         IO.println("\nFaturamento do Mestre Vitalino:");
-        IO.println("R$ " + mestreVitalino.calcularFaturamento(10));
+        IO.println("R$ " + mestreVitalino1.calcularFaturamento(10));
 
         IO.println("\nPerfil:");
         mestreEspedito.exibirPerfil();
