@@ -76,24 +76,15 @@ public class Filme {
     public static class DC extends Filme {
 
         public DC(char inicial, float nota, String nome, String genero,
-                  int duracao, boolean disponivel, int anoLancamento) {
+            int duracao, boolean disponivel, int anoLancamento) {
 
-            super(
-                inicial,
-                nota,
-                nome,
-                genero,
-                duracao,
-                disponivel,
-                anoLancamento
-            );
+            super(inicial, nota, nome, genero, duracao, disponivel, anoLancamento);
         }
     }
 
 
     public static void main(String[] args) {
 
-        // OBJETO VINGADORES
         Filme VingadoresUltimato = new Filme(
             'V',
             8.4f,
@@ -113,25 +104,17 @@ public class Filme {
         System.out.println("Nota do filme: " + VingadoresUltimato.getNota());
 
         System.out.println(
-            "Disponibilidade: "
-            + (VingadoresUltimato.isDisponivel()
-            ? "Disponível"
-            : "Indisponível")
+            "Disponibilidade: " + (VingadoresUltimato.isDisponivel() ? "Disponível" : "Indisponível")
         );
 
 
         // ALTERANDO A DISPONIBILIDADE
-        VingadoresUltimato.setDisponivel(false);
+        VingadoresUltimato.setDisponivel(true);
 
         System.out.println(
-            "Disponibilidade após alteração: "
-            + (VingadoresUltimato.isDisponivel()
-            ? "Disponível"
+            "Disponibilidade após alteração: " + (VingadoresUltimato.isDisponivel() ? "Disponível"
             : "Indisponível")
         );
-
-
-        // OBJETO DA CLASSE DC
 
         DC CavaleiroDasTrevas = new DC(
             'K',
@@ -143,9 +126,6 @@ public class Filme {
             2008
         );
 
-
-        // IMPRIMINDO CAVALEIRO DAS TREVAS
-
         System.out.println("\n=== CAVALEIRO DAS TREVAS ===");
 
         System.out.println("Nome do filme: " + CavaleiroDasTrevas.getNome());
@@ -153,7 +133,6 @@ public class Filme {
         System.out.println("Duração do filme: " + CavaleiroDasTrevas.getDuracao() + " minutos");
         System.out.println("Ano de lançamento: " + CavaleiroDasTrevas.getAnoLancamento());
         System.out.println("Nota do filme: " + CavaleiroDasTrevas.getNota());
-
         System.out.println("Disponibilidade: " + (CavaleiroDasTrevas.isDisponivel() ? "Disponível" : "Indisponível")
         );
     }
