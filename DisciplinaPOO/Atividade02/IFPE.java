@@ -9,7 +9,7 @@
 
     // a classe é o molde
     // e o construtor é o método que inicializa os atributos da classe
-public IFPE(int idade, long cpf, double nota, char sexo, String nome, String curso, long matricula) {
+    public IFPE(int idade, long cpf, double nota, char sexo, String nome, String curso, long matricula) {
         this.idade = idade;
         this.cpf = cpf;
         this.nota = nota;
