@@ -8,7 +8,7 @@ public class Artesao {
         this.nome = nome;
         this.cidade = cidade;
         this.tecnica = tecnica;
-        setPrecoPecaMedia(precoPecaMedia);
+        setPrecoPecaMedia(precoPecaMedia); //esse método já faz a validação do preço.
     }
 
     public String getNome() {
@@ -48,14 +48,12 @@ public class Artesao {
     }
 
     public void exibirInfo() {
-        IO.println("Nome: " + nome
-            + "\nCidade: " + cidade
-            + "\nTecnica: " + tecnica
-            + "\nPreco medio da peca: R$ " + precoPecaMedia);
+        IO.println("Nome: " + nome + "\nCidade: " + cidade + "\nTecnica: " + tecnica 
+        + "\nPreco medio da peca: R$ " + precoPecaMedia);
     }
 
     public double calcularFaturamento(int pecasVendidas) {
-        return precoPecaMedia * pecasVendidas;
+        return precoPecaMedia * pecasVendidas; //retorna o faturamento do artesão com base na quantidade de peças vendidas
     }
 
     public void exibirPerfil() {
@@ -83,8 +81,9 @@ public class Artesao {
         );
 
         IO.println("--- TESTANDO OBJETOS NA MEMORIA ---");
-        IO.println(mestreVitalino1 == mestreVitalino2);
-        IO.println(mestreVitalino1.equals(mestreVitalino2));
+        IO.println(mestreVitalino1 == mestreVitalino2); // compara se os objetos são o mesmo na memória
+        IO.println(mestreVitalino1.equals(mestreVitalino2)); // compara se os objetos são iguais, 
+        // ou seja, se possuem os mesmos atributos
 
         Artesao mestreEspedito = new Artesao(
             "Espedito Seleiro", "Ceará", "Couro", 945.00
@@ -110,7 +109,7 @@ public class Artesao {
         mestreZuza.exibirInfo();
 
         IO.println("\nFaturamento do Mestre Vitalino:");
-        IO.println("R$ " + mestreVitalino1.calcularFaturamento(10));
+        IO.println("R$ " + mestreVitalino1.calcularFaturamento(10)); 
 
         IO.println("\nPerfil:");
         mestreEspedito.exibirPerfil();
@@ -122,9 +121,9 @@ public class Artesao {
         mestreZuza.exibirPerfil(false);
 
         IO.println("\n--- TESTANDO PRECO ---");
-        mestreVitalino1.setPrecoPecaMedia(3000);
-        IO.println("Novo preço: R$ " + mestreVitalino1.getPrecoPecaMedia());
-        mestreVitalino1.setPrecoPecaMedia(-100);
+        mestreVitalino1.setPrecoPecaMedia(3000); // atualiza o preço da peça do artesão
+        IO.println("Novo preço: R$ " + mestreVitalino1.getPrecoPecaMedia()); // exibe o novo preço da peça do artesão
+        mestreVitalino1.setPrecoPecaMedia(-100); // tenta atualizar o preço da peça do artesão com um valor negativo
 
         IO.println("\n--- TESTANDO ESTOQUE ---");
         Estoque estoque = new Estoque(10);
@@ -137,7 +136,7 @@ public class Artesao {
         estoque.retirar(3);
         estoque.exibirQuantidade();
 
-        estoque.retirar(20); 
+        estoque.retirar(20); // tenta retirar mais produtos do que há em estoque
         estoque.adicionar(-2); 
     }
 }
@@ -148,7 +147,7 @@ class Estoque {
         if (quantidade >= 0) {
             this.quantidade = quantidade;
         } else {
-            this.quantidade = 0;
+            this.quantidade = 0; // define a quantidade como 0 se o valor informado for negativo
             IO.println("Erro: o estoque não pode ser negativo!");
         }
     }
@@ -169,8 +168,8 @@ class Estoque {
     public void retirar(int quantidade) {
         if (quantidade <= 0) {
             IO.println("Erro: informe uma quantidade maior que zero!");
-        } else if (quantidade <= this.quantidade) {
-            this.quantidade -= quantidade;
+        } else if (quantidade <= this.quantidade) { // verifica se há produtos suficientes no estoque
+            this.quantidade -= quantidade; // atualiza a quantidade em estoque
             IO.println("Produtos retirados com sucesso!");
         } else {
             IO.println("Erro: não há produtos suficientes no estoque!");
@@ -178,6 +177,6 @@ class Estoque {
     }
 
     public void exibirQuantidade() {
-        IO.println("Quantidade em estoque: " + quantidade);
+        IO.println("Quantidade em estoque: " + quantidade); 
     }
 }
