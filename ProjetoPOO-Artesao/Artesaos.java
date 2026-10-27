@@ -1,6 +1,3 @@
-
-public class Pri {
-
     public static void main(String[] args) {
 
         Artesao artesao1 = new Artesao();
