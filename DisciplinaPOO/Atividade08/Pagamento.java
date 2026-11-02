@@ -1,4 +1,6 @@
-//Exercício 8.2 — Pagamento -> CartaoCredito, Boleto, Pix. Método processar(double valor) diferente para cada tipo.
+//Exercício 8.2 — Pagamento -> CartaoCredito, Boleto, Pix. 
+// Método processar(double valor) diferente para cada tipo.
+
 public class Pagamento {
     public String tipo;
     private double valor;
@@ -35,6 +37,9 @@ public class Pagamento {
         }
     }
 
+    public void processar(double valor) {
+        IO.println("Processando pagamento de " + valor + " via " + tipo);
+    }
     public static class Boleto extends Pagamento {
         private String codigoBoleto;
 
@@ -80,9 +85,12 @@ public class Pagamento {
     Pagamento pagamento2 = new Pagamento("Boleto", 2800.50);
     Pagamento pagamento3 = new Pagamento("Pix", 310.30);
 
-    IO.println("Pagamento 1: Tipo: " + pagamento1.tipo + "Valor: " + pagamento1.getValor());
-    IO.println("Pagamento 2: Tipo: " + pagamento2.tipo + "Valor: " + pagamento2.getValor());
-    IO.println("Pagamento 3: Tipo: " + pagamento3.tipo + "Valor: " + pagamento3.getValor());
+    //IO.println("Pagamento 1: Tipo: " + pagamento1.tipo + "Valor: " + pagamento1.getValor());
+    //IO.println("Pagamento 2: Tipo: " + pagamento2.tipo + "Valor: " + pagamento2.getValor());
+    //IO.println("Pagamento 3: Tipo: " + pagamento3.tipo + "Valor: " + pagamento3.getValor());
 
+    pagamento1.processar(pagamento1.getValor());
+    pagamento2.processar(pagamento2.getValor());
+    pagamento3.processar(pagamento3.getValor());
     }
 }
