@@ -1,7 +1,5 @@
-// Exercício 7.3 — Crie uma superclasse PessoaNordeste com nome, municipio e estado.
-// Faça Artesao herdar dela. Adicione Comerciante e Agricultor. Exiba todos em um array do tipo PessoaNordeste.
-
-public class PessoaNordeste {
+public abstract class PessoaNordeste { 
+    //a classe abstrata permite que outras classes herdem dela, mas não pode ser instanciada diretamente.
     private String nome;
     private String municipio;
     private String estado;
@@ -39,37 +37,43 @@ public class PessoaNordeste {
         IO.println("Estado: " + estado);
     }
 
+    public abstract void descricaoProfissional(); 
+    //essa descrição é abstrata, pois cada profissão terá uma descrição diferente.
+
     public static void main(String[] args) {
 
         Comerciante comerciante = new Comerciante(
-            "João", "Recife", "Pernambuco", "Loja de Artesanato");
-
+            "João", "Recife", "Pernambuco", "Loja de Artesanato"
+        );
         Agricultor agricultor = new Agricultor(
-            "Maria", "Fortaleza", "Ceará", "Cultura de Frutas");
-
+            "Maria", "Fortaleza", "Ceará", "Cultura de Frutas"
+        );
         Artesao artesao = new Artesao(
-            "Pedro", "Caruaru", "Pernambuco", "Escultura em madeira", 150.0);
+            "Pedro", "Caruaru", "Pernambuco",
+            "Escultura em madeira", 150.0
+        );
 
-        PessoaNordeste[] pessoas = { 
-            //o array é do tipo PessoaNordeste, 
-            // mas pode armazenar objetos de qualquer subclasse
+        PessoaNordeste[] pessoas = {
             comerciante,
             agricultor,
             artesao
         };
 
-        IO.println("=== PERFIS ===");
-        for (PessoaNordeste pessoa : pessoas) { // Polimorfismo: cada objeto exibe seu próprio perfil
+        IO.println("---- PERFIS ----");
+        for (PessoaNordeste pessoa : pessoas) {
             pessoa.exibirPerfil();
             IO.println("----------------------");
         }
 
-        //IO.println("--- TESTANDO OBJETOS NA MEMÓRIA ---");
-        //IO.println(agricultor == agricultor);
-        //IO.println(agricultor.equals(agricultor));
+        IO.println("---- DESCRIÇÃO PROFISSIONAL ----");
+        for (PessoaNordeste pessoa : pessoas) {
+            pessoa.descricaoProfissional();
+            IO.println("----------------------");
+        }
 
         IO.println("\n--- TESTANDO PREÇO ---");
         artesao.setPrecoPecaMedia(-50.0);
+
         IO.println("Preço médio da peça: R$ " + artesao.getPrecoPecaMedia());
     }
 }
@@ -78,7 +82,7 @@ class Artesao extends PessoaNordeste {
     private String tecnica;
     private double precoPecaMedia;
 
-    public Artesao(String nome, String municipio, String estado,String tecnica, double precoPecaMedia) {
+    public Artesao(String nome, String municipio, String estado, String tecnica, double precoPecaMedia) {
         super(nome, municipio, estado);
 
         this.tecnica = tecnica;
@@ -95,9 +99,7 @@ class Artesao extends PessoaNordeste {
     public double getPrecoPecaMedia() {
         return precoPecaMedia;
     }
-
     public void setPrecoPecaMedia(double precoPecaMedia) {
-
         if (precoPecaMedia >= 0) {
             this.precoPecaMedia = precoPecaMedia;
         } else {
@@ -111,17 +113,20 @@ class Artesao extends PessoaNordeste {
 
     @Override
     public void exibirPerfil() {
-        IO.println("Nome: " + getNome());
-        IO.println("Município: " + getMunicipio());
-        IO.println("Estado: " + getEstado());
+        super.exibirPerfil();
         IO.println("Técnica: " + tecnica);
+        IO.println("Preço médio da peça: R$ " + precoPecaMedia);
+    }
+
+    @Override
+    public void descricaoProfissional() {
+        IO.println("Profissão: Artesão");
+        IO.println("Técnica de trabalho: " + tecnica);
         IO.println("Preço médio da peça: R$ " + precoPecaMedia);
     }
 }
 
-
 class Comerciante extends PessoaNordeste {
-
     private String tipoNegocio;
 
     public Comerciante(String nome, String municipio, String estado, String tipoNegocio) {
@@ -139,9 +144,13 @@ class Comerciante extends PessoaNordeste {
 
     @Override
     public void exibirPerfil() {
-        IO.println("Nome: " + getNome());
-        IO.println("Município: " + getMunicipio());
-        IO.println("Estado: " + getEstado());
+        super.exibirPerfil();
+        IO.println("Tipo de negócio: " + tipoNegocio);
+    }
+
+    @Override
+    public void descricaoProfissional() {
+        IO.println("Profissão: Comerciante");
         IO.println("Tipo de negócio: " + tipoNegocio);
     }
 }
@@ -151,7 +160,6 @@ class Agricultor extends PessoaNordeste {
 
     public Agricultor(String nome, String municipio, String estado, String tipoCultura) {
         super(nome, municipio, estado);
-
         this.tipoCultura = tipoCultura;
     }
 
@@ -164,21 +172,23 @@ class Agricultor extends PessoaNordeste {
 
     @Override
     public void exibirPerfil() {
-        IO.println("Nome: " + getNome());
-        IO.println("Município: " + getMunicipio());
-        IO.println("Estado: " + getEstado());
+        super.exibirPerfil();
+        IO.println("Tipo de cultura: " + tipoCultura);
+    }
+
+    @Override
+    public void descricaoProfissional() {
+        IO.println("Profissão: Agricultor");
         IO.println("Tipo de cultura: " + tipoCultura);
     }
 }
-
 
 class Estoque {
     private int quantidade;
 
     public Estoque(int quantidade) {
-
         if (quantidade >= 0) {
-            this.quantidade = quantidade;
+        this.quantidade = quantidade;
         } else {
             this.quantidade = 0;
             IO.println("Erro: o estoque não pode ser negativo!");
@@ -190,9 +200,8 @@ class Estoque {
     }
 
     public void adicionar(int quantidade) {
-
         if (quantidade > 0) {
-            this.quantidade += quantidade;
+        this.quantidade += quantidade;
             IO.println("Produtos adicionados com sucesso!");
         } else {
             IO.println("Erro: informe uma quantidade maior que zero!");
@@ -200,11 +209,10 @@ class Estoque {
     }
 
     public void retirar(int quantidade) {
-
         if (quantidade <= 0) {
             IO.println("Erro: informe uma quantidade maior que zero!");
         } else if (quantidade <= this.quantidade) {
-            this.quantidade -= quantidade;
+        this.quantidade -= quantidade;
             IO.println("Produtos retirados com sucesso!");
         } else {
             IO.println("Erro: não há produtos suficientes no estoque!");
