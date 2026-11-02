@@ -22,7 +22,6 @@ public class Funcionario {
 
     public static class Gerente extends Funcionario {
         private double bonus;
-
         public Gerente(String nome, String cargo, double salario, double bonus) {
         super(nome, cargo, salario);
             this.bonus = bonus;
